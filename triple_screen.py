@@ -34,7 +34,10 @@ def make_triple_screen_final(input_path):
         "-c:v", "h264_videotoolbox",
 
         # ⚠️ 关键调整：改为 2000k，避免生成 4GB 的巨大文件
-        "-b:v", "5000k",
+        "-b:v", "10000k",
+        "-profile:v", "high",
+        "-level", "4.2",
+        "-pix_fmt", "yuv420p",
 
         "-allow_sw", "1",
         "-c:a", "copy",
